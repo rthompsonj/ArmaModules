@@ -3,6 +3,8 @@
 //fnc_place_items = compile preprocessFile "ArmaModules\place_items.sqf";
 //fnc_place_markers = compile preprocessFile "ArmaModules\place_markers.sqf";
 
+if(!isServer) exitWith{};
+
 _ITEMSTOPLACE = ["Box_FIA_Support_F"];
 
 _locs  = ["PLACEMARK",3] call MAM_fnc_get_locations;
