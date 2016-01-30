@@ -1,9 +1,10 @@
 
-_itemSpacing = 50;
-
 _marker = _this select 0;
 _nlocs  = _this select 1;
-if(count _this > 2) then{ _itemSpacing = _this select 2; };
+_itemSpacing = _this select 2;
+
+_otherLocs = [];
+if(count _this > 3) then{ _otherLocs = _this select 3;};
 
 _markerShape = markerShape _marker;
 _markerDir   = markerDir _marker;
@@ -38,6 +39,10 @@ for [{_i=0}, {_i<_nlocs}, {_i=_i+1}] do{
                 _dist = _x distance _ranHousePos;
                 if(_dist < _minDistance) then{_minDistance = _dist;};
             }forEach _locations;
+            {
+                _dist = _x distance _ranHousePos;
+                if(_dist < _minDistance) then{_minDistance = _dist;};
+            }forEach _otherLocs;
 
             if(_ranHousePos in _loc && _minDistance > _itemSpacing) then{
                 _locations pushback _ranHousePos;

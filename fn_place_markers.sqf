@@ -1,11 +1,11 @@
 
 _positions = _this select 0;
+_DEBUG = _this select 1;
 
-_DEBUG = true;
 _minMarkerR = 75;
-_cnt = 0;
 _markers = [];
 {
+    _cnt = MAM_CNT;
     _markerName = format["item%1",_cnt];
     _markerRvar = floor(_minMarkerR * 0.2);
     
@@ -33,8 +33,8 @@ _markers = [];
         _dmarker setMarkerColor "ColorRed";
         _dmarker setMarkerSize [5.0,5.0];
     };
-    _cnt = _cnt + 1;
-
+    //_cnt = _cnt + 1;
+    MAM_CNT = MAM_CNT + 1;
     _markers pushback _marker;
 }forEach _positions;
 
