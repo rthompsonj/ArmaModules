@@ -128,6 +128,8 @@ _selectLocation = {
                         _item = [_items call BIS_fnc_selectRandom, _ranHousePos] call _placeItem;
                         _placedItems pushback _item;
                         _placedMarkers pushBack _mark;
+
+                        _item setVariable["MARK",_mark];
                     };
                     _placed = true;
                 };
@@ -159,5 +161,14 @@ _selectLocation = {
     [_marker, _items, _nDecoys, true] call _selectLocation;
     deleteMarker _marker;
 }forEach _this;
+
+for [{_i=0}, {_i<count _placedItems}, {_i=_i+1}] do{
+    _cache = _placedItems select _i;
+    _mark  = _placedMarkers select _i;
+    _cache addEventHandler["Killed", {
+            diag_log "doing some stuff";
+            ((_this select 0) getVariable "MARK") setMarkerColor "ColorRed";
+    }];
+};
 
 [_placedItems,_placedMarkers]
