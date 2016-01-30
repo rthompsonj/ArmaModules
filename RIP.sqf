@@ -25,6 +25,8 @@
 //  _null = [["MYMARKER",["Box_FIA_Support_F"],10,2],["SECONDMARKER",["Box_FIA_Support_F"],2,0]] execVM "ArmaModules\RIP.sqf";
 //------------------------------------------------------------------------------------
 
+if(1==1) exitWith{};
+
 _DEBUG             = true;
 _placeMarkers      = true;
 _placeDecoyMarkers = true;
