@@ -23,11 +23,4 @@ And this entry in your ``init.sqf`` so that it will execute on the server:
     
 -----
 
-Credit and inspiration for much o this work goes out to these excellent community made revive scripts:
-
-* [AIS wounding](http://forums.bistudio.com/showthread.php?170975-A3-Wounding-System)
-* [BTC Revive](http://forums.bistudio.com/showthread.php?148085-BTC-Revive)
-* [FAR Revive](http://forums.bistudio.com/showthread.php?155989-Farooq-s-Revive)
-* [Grimes Simple Revive Script](http://forums.bistudio.com/showthread.php?177595-Grimes-Simple-Revive-Script)
-
-And special thanks to Yogurt for his assistance testing ``SRS``.
+All current options are found in MAM\fn_init.sqf (major work in progress).
