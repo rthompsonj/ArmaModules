@@ -11,4 +11,6 @@ _items = [];
     _items pushback _item;
 }forEach _positions;
 
+MAM_ITEM_COUNT = MAM_ITEM_COUNT + (count _items);
+
 _items

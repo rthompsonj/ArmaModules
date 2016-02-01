@@ -19,8 +19,8 @@ To include this script in your mission, add the following lines to your ``descri
     
 And this entry in your ``init.sqf`` so that it will execute on the server:
 
-    [] spawn MAM_fnc_init;
-    
+    [] execVM "MAM\MAM_Init.sqf";
+        
 -----
 
 All current options are found in MAM\fn_init.sqf (major work in progress).

@@ -27,6 +27,7 @@ for [{_i=0}, {_i<_nlocs}, {_i=_i+1}] do{
     _found = false;
     _iterations = 0;
     while{!_found} do{
+        if(count _houseList <= 0) exitWith{diag_log "House List empty! Aborting";};
         _houseIndex = floor random (count _houseList);
         _house = _houseList select _houseIndex;
         _housePos = [_house] call BIS_fnc_buildingPositions;
@@ -53,7 +54,7 @@ for [{_i=0}, {_i<_nlocs}, {_i=_i+1}] do{
         _houseList set [_houseIndex,-1];
         _houseList = _houseList - [-1];
         _iterations = _iterations + 1;
-        if(_iterations > 1000) exitWith{};
+        if(_iterations > 1000) exitWith{diag_log "Exceeded 1000 iterations in house search, aborting";};
     };
 };
 deleteLocation _loc;
